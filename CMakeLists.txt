@@ -4,7 +4,6 @@ project(DBAccess)
 set(CMAKE_CXX_STANDARD 17)
 
 
-include_directories(../)
 include_directories(src/thrift/gen-cpp)
 include_directories(src)
 
@@ -54,7 +53,7 @@ endif ()
 set(THRIFTNAME BasicDataAccess)
 file(GLOB_RECURSE TEST_SC_FILES src/dao/nanodbc.cpp src/thrift/gen-cpp/${THRIFTNAME}.cpp src/thrift/gen-cpp/${THRIFTNAME}_types.cpp)
 MESSAGE(STATUS testsourcefile:${TEST_SC_FILES})
-add_executable(test ${TEST_SC_FILES} src/test/test.cpp)
+add_executable(test ${TEST_SC_FILES} test/test.cpp)
 target_link_libraries(test ${LIBFILES})
 
 set(APPNAME BasicDataAccess)

@@ -68,6 +68,7 @@ public:
         delete (RemoteAddress*) serverContext;
     }
 
+
     /**
      * Called when a client is about to call the processor.
      */
@@ -79,7 +80,6 @@ public:
         log_info(str(boost::format("Processing call from client ip:port = %1%%2%")%ip%port));
         std::cout<< std::endl;
     }
-
 };
 
 #endif //RADAR_BACKEND_ADDREVENTHANDLER_HPP

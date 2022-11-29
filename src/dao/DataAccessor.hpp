@@ -161,6 +161,8 @@ protected:
                     }
                     conditionSql += str(format("(%1% in (%2%) )") % conditionKey % join(vs,","));
                 }
+            }else{
+                assert(conditionType == "range"||conditionType == "equal");
             }
             return "and " + conditionSql + "\n";
         }
